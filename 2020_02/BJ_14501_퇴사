@@ -1,4 +1,3 @@
-package week4;
 import java.util.Scanner;
 
 public class BJ_14501_퇴사 {
