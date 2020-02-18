@@ -1,0 +1,56 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class BJ_1780_종이의개수{
+	static int[] count = new int[3];
+
+	public static void cut(int[][] arr,int size,int row,int col) {
+		if(isSame(arr,size,row,col)) {
+			count[arr[row][col]+1]++;
+			return;
+		}
+		
+		for (int i = 0; i < 3; i++) {
+			for (int j = 0; j < 3; j++) {
+				cut(arr,size/3,row+size/3*i,col+size/3*j);
+			}
+		}	
+	}
+	
+	public static boolean isSame(int[][] arr,int size,int row,int col) {
+
+		int stand = arr[row][col];
+		for (int i = row; i < row+size; i++) {
+			for (int j = col; j < col+size; j++) {
+				if(stand!=arr[i][j]){
+					return false;
+				}
+			}
+		}		
+		return true;
+	}
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+		StringBuilder sb = new StringBuilder();
+		
+		int N = Integer.parseInt(bf.readLine());
+		int[][] paper = new int[N][N];
+		
+		StringTokenizer tokens ;
+		for (int i = 0; i < paper.length; i++) {
+			tokens = new StringTokenizer(bf.readLine());
+			for (int j = 0; j < paper[i].length; j++) {
+				paper[i][j]= Integer.parseInt(tokens.nextToken());
+			}
+		}
+		
+		cut(paper,N,0,0);
+		for (int i = 0; i < count.length; i++) {
+			sb.append(count[i]).append("\n");
+		}
+		System.out.println(sb);
+	}
+
+}
