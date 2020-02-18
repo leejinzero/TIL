@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class SWEA_1210_Ladder {
+public class SWEA_1210_사다리타기 {
 	static int[][] ladderArr = new int[100][100];
 	static int k;
 	
