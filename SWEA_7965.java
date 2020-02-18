@@ -1,10 +1,8 @@
-package algo_adv.day2;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class SWEA_7965_ДыБо{
+public class SWEA_7965{
 
 	public static long sigma(long n,long r){
 		if(r==1) {
