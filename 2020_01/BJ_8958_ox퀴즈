@@ -1,5 +1,3 @@
-package backjun;
-
 import java.util.Scanner;
 
 public class BJ_8958_ox퀴즈 {
