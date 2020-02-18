@@ -1,5 +1,3 @@
-package week3;
-
 import java.util.Scanner;
 
 public class BJ_17144_미세먼지안녕 {
