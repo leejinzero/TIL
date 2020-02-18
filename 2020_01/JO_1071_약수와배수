@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class JA_1071_약수와배수 {
+public class JO_1071_약수와배수 {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
