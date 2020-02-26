@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class BJ_5014_스타트와링크 {
+public class BJ_5014_스타트링크 {
 	static int building;
 	static int start;
 	static int interview;
