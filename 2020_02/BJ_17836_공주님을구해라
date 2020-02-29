@@ -1,0 +1,90 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.StringTokenizer;
+
+public class BJ_17836_공주님을구해라 {
+
+	static int[][] map ;
+	static int row;
+	static int col;
+	static int[][] dir = {{1,0},{-1,0},{0,1},{0,-1}};
+	static int min = Integer.MAX_VALUE;
+	
+	static class Point{
+		int row , col, cnt;
+
+		public Point(int row, int col, int cnt) {			
+			this.row = row;
+			this.col = col;
+			this.cnt = cnt;
+		}
+		
+	}
+	
+	public static void bfs(int limit) {
+		Queue<Point> q = new LinkedList<>();
+		boolean[][] visited = new boolean[row][col];
+		q.offer(new Point(0,0,0));
+		visited[0][0]=true;
+		
+		while(!q.isEmpty()) {
+			Point front = q.poll();
+			
+			if(front.row== row-1 && front.col == col-1) {
+				min = Math.min(min, front.cnt);
+				return;
+			}
+			
+			if(front.cnt > limit) return; 
+			
+			int tem = front.cnt;
+			for (int i = 0; i < dir.length; i++) {
+				int nr = front.row + dir[i][0];
+				int nc = front.col + dir[i][1];
+				
+				if(isIn(nr,nc) && !visited[nr][nc]) {
+					if(map[nr][nc]==2){
+						visited[nr][nc]= true;
+						int time =tem+1+Math.abs(row-1-nr)+Math.abs(col-1-nc);
+						if(time <= limit) {
+							min = Math.min(time, min);							
+						}
+					}
+					else if(map[nr][nc] == 0) {
+						q.offer(new Point(nr,nc,tem+1));
+						visited[nr][nc] =true;
+					}
+				}
+			}
+		}
+	}
+	
+	private static boolean isIn(int nr, int nc) {
+		return nr>=0 && nr<row && nc>=0 && nc<col;
+	}
+
+	public static void main(String[] args) throws IOException {
+		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer tokens = new StringTokenizer(bf.readLine());
+		
+		row = Integer.parseInt(tokens.nextToken());
+		col = Integer.parseInt(tokens.nextToken());
+		int limit = Integer.parseInt(tokens.nextToken());
+		
+		map = new int[row][col];
+		
+		for (int r = 0; r < row; r++) {
+			tokens = new StringTokenizer(bf.readLine());
+			for (int c = 0; c < col; c++) {
+				map[r][c] = Integer.parseInt(tokens.nextToken());
+			}
+		}
+		bfs(limit);
+		
+		if(min == Integer.MAX_VALUE) System.out.println("Fail");
+		else System.out.println(min);
+	}
+}
