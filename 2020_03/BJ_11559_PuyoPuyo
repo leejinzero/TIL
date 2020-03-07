@@ -75,10 +75,10 @@ public class BJ_11559_PuyoPuyo {
 				}
 			}
       
-      //바뀌는 열 리스트
+      			//바뀌는 열 리스트
 			List<Integer> col = new ArrayList<>();
 			//터진거 점으로 바꾸기
-      if (pop.size() > 0) {
+     			if (pop.size() > 0) {
 				popCnt++;
 				for (int j = 0; j < pop.size(); j++) {
 					List<Point> dfs_list2 = pop.get(j);
@@ -115,7 +115,7 @@ public class BJ_11559_PuyoPuyo {
 							}
 						}
             
-            //중간에 점 끼여있는지 검사 (다 내려갔는지?)
+            					//중간에 점 끼여있는지 검사 (다 내려갔는지?)
 						boolean flag = false;
 						for (int k = 0; k < 12; k++) {
 							if (map[k][c1] != '.') {
@@ -127,7 +127,7 @@ public class BJ_11559_PuyoPuyo {
 							}
 						}
             
-            //다 내려갔다면 통과
+            					//다 내려갔다면 통과
 						if (!flag) break;
 					}
 				}
