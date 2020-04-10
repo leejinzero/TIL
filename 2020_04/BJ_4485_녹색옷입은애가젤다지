@@ -6,6 +6,7 @@ import java.util.PriorityQueue;
 import java.util.StringTokenizer;
 
 public class BJ_4485_녹색옷입은애가젤다지 {
+	//pq에 넣을 class, dis는 업데이트 될 0,0~r,c 최단거리(비용)
 	static class Pair implements Comparable<Pair>{
 		int r,c,dis;
 
@@ -42,14 +43,19 @@ public class BJ_4485_녹색옷입은애가젤다지 {
 				}
 			}
 
+			//최단거리 저장될 배열
 			int[][] store = new int[N][N];
+			//사방탐색
 			int[][] dir = { { 1, 0 }, { 0, 1 }, { 0, -1 }, { -1, 0 } };
 
+			//우선 거리를 Integer.MAX_VALUE / 2로 초기화 Integer.MAX_VALUE로 설정시 밑에서 더할때 오버플로우 발생!
 			for (int[] row : store) {
 				Arrays.fill(row, Integer.MAX_VALUE / 2);
 			}
 
+			//시작점 초기화
 			store[0][0] = map[0][0];
+			
 			PriorityQueue<Pair> pq = new PriorityQueue<>();
 			pq.offer(new Pair(0,0,map[0][0]));
 			
@@ -60,6 +66,7 @@ public class BJ_4485_녹색옷입은애가젤다지 {
 					int nr = f.r + dir[i][0];
 					int nc = f.c + dir[i][1];
 
+					//더 최단거리가 될 수 있다면 업데이트해주고 pq에 넣어주기
 					if (isIn(nr, nc, N) && store[nr][nc] > store[f.r][f.c] + map[nr][nc]) {
 						store[nr][nc] = store[f.r][f.c] + map[nr][nc];
 						pq.offer(new Pair(nr,nc,store[nr][nc]));
@@ -77,5 +84,4 @@ public class BJ_4485_녹색옷입은애가젤다지 {
 	private static boolean isIn(int nr, int nc, int N) {
 		return nr >= 0 && nc >= 0 && nr < N && nc < N;
 	}
-
 }
