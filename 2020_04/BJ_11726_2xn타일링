@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 //피보나치 수열 - 점화식, DP(상향식)
-public class BJ11726_2xn타일링 {
+public class BJ_11726_2xn타일링 {
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
