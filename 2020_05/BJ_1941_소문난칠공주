@@ -1,0 +1,114 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+
+/**
+ * @Author leejinyoung
+ * @Date 2020. 5. 15.
+ * @Language java
+ * @Memory 183884KB
+ * @RunningSpeed 388ms
+ * @Description 조합+연결(bfs or dfs)
+ * 
+ */
+public class BJ_1941_소문난칠공주 {
+	private static char[][] map;
+	private static int cnt;
+
+	public static void main(String[] args) throws IOException {
+		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+		map = new char[5][5];
+
+		for (int i = 0; i < 5; i++) {
+			String str = bf.readLine();
+			for (int j = 0; j < 5; j++) {
+				map[i][j] = str.charAt(j);
+			}
+		}
+
+		list = new int[7];
+		check();
+		
+		combi(0, 7, 0);
+
+		System.out.println(cnt);
+
+	}// end of main
+
+	private static int[] list;
+
+	private static void combi(int idx, int pick, int before) {
+		if (idx == pick) {
+			if (check())
+				cnt++;
+			return;
+		}
+
+		for (int i = before; i < 25; i++) {
+			list[idx] = i;
+			combi(idx + 1, pick, i + 1);
+		}
+
+	}
+
+	static int[][] dir = { { 1, 0 }, { -1, 0 }, { 0, 1 }, { 0, -1 } };
+
+	private static boolean check() {
+		int scnt = 0;
+		
+		for (int i : list) {
+			if (map[i/5][i%5]=='S')
+				scnt++;
+		}
+		
+		if(scnt<4) return false;
+		
+		
+		return bfs();
+	}
+
+	private static boolean bfs() {
+		Queue<Point> q = new LinkedList<>();
+		ArrayList<Point> tem = new ArrayList<>();
+		
+		for(int k : list) {
+			tem.add(new Point(k/5,k%5));
+		}
+		
+		q.offer(new Point(list[0]/5,list[0]%5));
+		while(!q.isEmpty()) {
+			Point f = q.poll();
+			
+			for (int i = 0; i < 4; i++) {
+				int nr = f.r + dir[i][0];
+				int nc = f.c + dir[i][1];
+				if (tem.contains(new Point(nr,nc))) {
+					q.offer(new Point(nr,nc));
+					tem.remove(new Point(nr,nc));
+				}
+			}
+		}
+		
+		return tem.isEmpty();
+	}
+
+	static class Point {
+		int r, c;
+
+		public Point(int r, int c) {
+			this.r = r;
+			this.c = c;
+		}
+
+		@Override
+		public boolean equals(Object obj) {
+			Point p = (Point) obj;
+			return r == p.r && c == p.c;
+		}
+
+	}
+
+}// end of class
