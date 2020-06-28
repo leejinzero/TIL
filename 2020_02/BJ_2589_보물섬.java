@@ -1,0 +1,81 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.StringReader;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.StringTokenizer;
+
+public class BJ_2589_보물섬 {
+	static boolean[][] visited;
+	static int[][] dir = {{1,0},{-1,0},{0,1},{0,-1}};
+	static char[][] map;
+	static int max;
+	
+	static class Point{
+		int row, col,cnt;
+
+		public Point(int row, int col, int cnt) {
+			this.row = row;
+			this.col = col;
+			this.cnt = cnt;
+		}
+			
+	}
+	
+	public static void bfs(Point p) {
+		Queue<Point> q = new LinkedList<>();
+		q.offer(p);
+		visited = new boolean [map.length][map[0].length];
+		
+		while(!q.isEmpty()) {
+			Point front = q.poll();
+			
+			if(visited[front.row][front.col]) continue;
+			
+			visited[front.row][front.col] =true;
+			
+			int tem = front.cnt;
+			max= Math.max(max, tem);
+			
+			for (int i = 0; i < dir.length; i++) {
+				int nr = front.row + dir[i][0];
+				int nc = front.col + dir[i][1];
+				
+				if(isIn(nr,nc) && map[nr][nc]=='L') {
+					q.offer(new Point(nr,nc,tem+1));
+				}
+			}
+		}
+		
+	}
+
+	private static boolean isIn(int nr, int nc) {
+		return nr>=0 && nr< map.length && nc>=0 && nc<map[0].length;
+	}
+
+	public static void main(String[] args) throws IOException {
+		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer tokens = new StringTokenizer(bf.readLine());
+		int row = Integer.parseInt(tokens.nextToken());
+		int col = Integer.parseInt(tokens.nextToken());
+		map = new char[row][col];
+		visited = new boolean [row][col];
+		
+		for (int r = 0; r < row; r++) {
+			String str = bf.readLine();
+			for (int c = 0; c < col; c++) {
+				map[r][c] = str.charAt(c);
+			}
+		}
+		
+		for (int r = 0; r < row; r++) {
+			for (int c = 0; c < col; c++) {
+				if(map[r][c] == 'L') {
+					bfs(new Point(r,c,0));
+				}
+			}
+		}
+		System.out.println(max);		
+	}
+}

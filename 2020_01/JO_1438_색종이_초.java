@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class JO_1438_색종이_초 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int N = sc.nextInt();
+		int[][] map = new int[100][100];
+		
+		for (int i = 0; i < N; i++) {
+			int x = sc.nextInt();
+			int y = sc.nextInt();
+
+			for (int r = x-1; r < x-1+10; r++) {
+				for (int c=y-1; c < y-1+10; c++) {
+					map[r][c]=1;
+				}
+			}
+		}
+		
+		int count=0;
+		for (int i = 0; i < map.length; i++) {
+			for (int j = 0; j < map.length; j++) {
+				if(map[i][j]==1)count++;
+			}
+		}
+		
+		System.out.println(count);
+		
+	}
+
+}
