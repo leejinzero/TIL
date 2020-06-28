@@ -1,0 +1,94 @@
+package baekjoon;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class BJ_3085_사탕게임 {
+	static char[][] map;
+	static int max_stand;
+	
+	static void swap_c(int r, int c) {
+		char tem = map[r][c];
+		
+		map[r][c] = map[r][c+1];
+		map[r][c+1] = tem;
+	}
+	
+	static void swap_r(int r, int c) {
+		char tem = map[r][c];
+		
+		map[r][c] = map[r+1][c];
+		map[r+1][c] = tem;
+	}
+	
+	
+	static void dfs(int k) {
+		int cnt = 0;
+		
+		char stand = map[0][k];
+		for (int i = 0; i < map.length; i++) {
+			if(map[i][k]== stand) cnt++;
+			else {
+				max_stand = Math.max(max_stand, cnt);
+				stand = map[i][k];
+				cnt=1;
+			}
+		}
+		max_stand = Math.max(max_stand, cnt);
+		
+		cnt=0;
+		stand = map[k][0];
+		for (int i = 0; i < map.length; i++) {
+			if(map[k][i]== stand) cnt++;
+			else {
+				max_stand = Math.max(max_stand, cnt);
+				stand = map[k][i];
+				cnt=1;
+			}
+		}
+		max_stand = Math.max(max_stand, cnt);
+		
+	}
+
+	
+	public static void main(String[] args) throws IOException {
+		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+		
+		int mapsize = Integer.parseInt(bf.readLine());
+		map = new char[mapsize][mapsize];
+		
+		for (int r = 0; r < mapsize; r++) {
+			String str = bf.readLine();
+			for (int c = 0; c < mapsize; c++) {
+				map[r][c] = str.charAt(c);
+			}			
+		}		
+		
+		for (int i = 0; i < mapsize; i++) {
+			dfs(i);
+		}
+		
+		for (int r = 0; r < mapsize; r++) {
+			for (int c = 0; c < mapsize-1; c++) {
+				if(map[r][c]!=map[r][c+1]) {
+					swap_c(r,c);
+					dfs(c);
+					dfs(c+1);
+					swap_c(r,c);
+				}
+			}			
+		}
+		
+		for (int c = 0; c < mapsize; c++) {
+			for (int r = 0; r < mapsize-1; r++) {
+				if(map[r][c]!=map[r+1][c]) {
+					swap_r(r,c);
+					dfs(r);
+					dfs(r+1);
+					swap_r(r,c);
+				}
+			}			
+		}
+		System.out.println(max_stand);
+	}
+}

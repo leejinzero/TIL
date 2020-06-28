@@ -1,0 +1,90 @@
+package baekjoon;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.StringTokenizer;
+
+public class BJ_1430_공격 {
+
+	static int top;
+	static boolean[][] D;
+
+	public static void main(String[] args) throws IOException {
+		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer tks = new StringTokenizer(bf.readLine());
+
+		top = Integer.parseInt(tks.nextToken());
+		int dis = Integer.parseInt(tks.nextToken());
+		int power = Integer.parseInt(tks.nextToken());
+		int e_x = Integer.parseInt(tks.nextToken());
+		int e_y = Integer.parseInt(tks.nextToken());
+
+		// 탑들 정보
+		int[][] tops = new int[top + 1][2];
+		tops[0][0] = e_x;
+		tops[0][1] = e_y;
+
+		for (int i = 1; i <= top; i++) {
+			tks = new StringTokenizer(bf.readLine());
+			tops[i][0] = Integer.parseInt(tks.nextToken());
+			tops[i][1] = Integer.parseInt(tks.nextToken());
+		}
+
+		// 인접행렬 그래프
+		D = new boolean[top + 1][top + 1];
+
+		for (int i = 0; i < top; i++) {
+			for (int j = i + 1; j <= top; j++) {
+				double diff = Math.sqrt(Math.pow(tops[i][0] - tops[j][0], 2) + Math.pow(tops[i][1] - tops[j][1], 2));
+
+				if (diff <= dis) {
+					D[i][j] = D[j][i] = true;
+				}
+			}
+		}
+
+		// 방문체크
+		boolean[] visited = new boolean[top + 1];
+		Queue<Pair> q = new LinkedList<>();
+		q.offer(new Pair(0, (double)power));
+		visited[0] = true;
+
+		// 파워를 담아놀 배열
+		double[] Dis = new double[top + 1];
+		// bfs
+		while (!q.isEmpty()) {
+			Pair f = q.poll();
+
+			for (int i = 1; i <= top; i++) {
+				if (D[f.v][i] && !visited[i]) {
+					Dis[i] = f.dis;
+					visited[i] = true;
+					q.offer(new Pair(i, f.dis/ 2));
+				}
+			}
+		}
+		
+		double total = 0.0;
+		
+		for (int i = 1; i <= top; i++) {
+			total +=Dis[i];
+		}
+		
+		System.out.println(Math.round(total*100)/100.0);
+		
+	}
+
+	static class Pair {
+		int v;
+		double dis;
+
+		public Pair(int v, double dis) {
+			this.v = v;
+			this.dis = dis;
+		}
+
+	}
+
+}

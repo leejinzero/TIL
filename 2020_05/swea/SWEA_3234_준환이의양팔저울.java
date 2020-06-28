@@ -1,0 +1,90 @@
+package swea;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+/**
+ * @Author leejinyoung
+ * @Date  May 22, 2020
+ * @Language java
+ * @Memory 	20,628KB
+ * @RunningSpeed 1082ms
+ * @Description permutation+재귀
+ * 
+ */
+public class SWEA_3234_준환이의양팔저울 {
+
+	private static long total_cnt;
+	private static int[] nums;
+	private static int[] tem;
+	private static int N;
+	private static boolean[] visited;
+	
+	public static void main(String[] args) throws IOException {
+		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+		int T = Integer.parseInt(bf.readLine());
+		StringBuilder sb = new StringBuilder();
+		
+		for (int tc = 1; tc <=T; tc++) {
+			sb.append("#").append(tc).append(" ");
+			N = Integer.parseInt(bf.readLine());
+			
+			StringTokenizer tks= new StringTokenizer(bf.readLine());
+			
+			nums = new int[N];
+			tem=new int[N];
+			int sum=0;
+			
+			for (int i = 0; i < N; i++) {
+				nums[i]=Integer.parseInt(tks.nextToken());
+				sum+=nums[i];
+			}
+			total_cnt=0;
+			visited = new boolean[N];
+		
+			permu(0);
+			
+			sb.append(total_cnt).append("\n");
+			
+		}
+		System.out.println(sb);
+
+	}
+	
+	private static void permu(int idx) {
+		if(idx==N) {
+			dfs(1,tem[0],0);
+			
+			return;
+		}
+		
+		for (int i = 0; i < N; i++) {
+			if(!visited[i]) {
+				tem[idx]=nums[i];
+				visited[i]=true;
+				permu(idx+1);
+				visited[i] =false;
+			}
+		}
+		
+		
+	}
+
+	private static void dfs(int idx, int left, int right) {
+		if(idx==N) {
+			total_cnt++;
+			return;
+		}
+		
+		if(tem[idx]+right<=left) {
+			dfs(idx+1,left,tem[idx]+right);
+		}
+		dfs(idx+1,left+tem[idx],right);
+		
+	}
+
+
+
+}

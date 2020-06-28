@@ -1,0 +1,157 @@
+package baekjoon;
+
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
+public class BJ_17135_캐슬디펜스 {
+	static class Point{
+		int row, col, cnt;
+
+		public Point(int row, int col, int cnt) {
+			this.row = row;
+			this.col = col;
+			this.cnt = cnt;
+		}			
+	}
+	
+	static boolean visited[][];
+	static Point bfs(Point start) {
+		Queue<Point> q = new LinkedList<>();
+		visited = new boolean[row+1][col];		
+		
+		visited[start.row][start.col] = true;
+		q.offer(start);
+		while(!q.isEmpty()) {
+			Point front = q.poll();
+			int cnt = front.cnt;
+			
+			if(cnt == distance+1) {
+				break;
+			}
+			
+			if(mapCopy[front.row][front.col]==1) {
+				return front;
+			}
+		
+			
+			int[][] dir = {{0,-1},{-1,0},{0,1}};
+			
+			for (int i = 0; i < dir.length; i++) {
+				int nr = front.row + dir[i][0];
+				int nc = front.col + dir[i][1];
+				
+				if(isIn(nr,nc) && !visited[nr][nc]) {
+					q.offer(new Point(nr,nc,cnt+1));
+					visited[nr][nc] = true;
+					
+				}
+			}			
+		}		
+		return null;
+	}
+	
+	private static boolean isIn(int nr, int nc) {
+		return nr>=0 && nr<row+1 && nc>=0 && nc<col;
+	}
+	
+	public static void print(int[][] arr) {
+		for(int i = 0; i < row+1; i++) {
+			System.out.println(Arrays.toString(arr[i]));
+		}
+		System.out.println();
+	}
+	
+	public static void copy() {
+		for(int i = 0; i < row + 1; i ++) {
+			for(int j = 0; j < col; j++) {
+				mapCopy[i][j] = map[i][j];
+			}
+		}
+	}
+	
+	public static void startGame(int[] shotman) {
+		int r = row;
+		while(r > 0) {
+			
+			int [][] arr= new int[row+1][col];				
+			
+			for (int c = 0; c < col; c++) {
+				mapCopy[r][c]=0;
+			}
+			for (int s = 0; s < shotman.length; s++) {
+				mapCopy[r][shotman[s]]=-1;
+			}			
+			for (int i = 0; i < shotman.length; i++) {
+				Point tmp = bfs(new Point(r, shotman[i], 0));
+				if(tmp == null) {
+					continue;
+				}
+				arr[tmp.row][tmp.col]= 1;
+							
+			}
+			for(int i = 0; i < row+1; i++) {
+				for(int j = 0; j < col; j++) {
+					if(arr[i][j] == mapCopy[i][j] && mapCopy[i][j] == 1) {
+						mapCopy[i][j] = 0;
+						die++;
+					}
+				}
+			}			
+			// 위치 찾기
+			//print(mapCopy);
+			r--;
+		}
+	}
+
+	static int[] shotman =new int[3];
+	public static void combi(int index,int start) {
+		if(index==3) {
+			
+			startGame(shotman);		
+			if(max < die) {
+				max = die;
+			}
+			die = 0;
+			copy();
+			return ; 
+		}
+		
+		for (int i = start; i < col; i++) {
+			shotman[index]=i;
+			combi(index+1,i+1);
+		}
+	}
+	static int max = Integer.MIN_VALUE;
+	static int row;
+	static int die;
+	static int real;
+	static int col;
+	static int distance;
+	static int[][] map;
+	static int[][] mapCopy;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		row = sc.nextInt();
+		col = sc.nextInt();
+		distance = sc.nextInt();
+		
+		map = new int[row+1][col];
+		mapCopy = new int[row+1][col];
+		visited = new boolean[row+1][col];
+		
+		for (int r = 0; r < row; r++) {
+			for (int c = 0; c < col; c++) {
+				map[r][c]= sc.nextInt();
+				mapCopy[r][c] = map[r][c];
+			}
+		}
+		combi(0,0);
+		
+		System.out.println(max);
+
+	}
+
+}
