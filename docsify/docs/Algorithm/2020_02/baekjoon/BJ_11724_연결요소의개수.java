@@ -1,0 +1,66 @@
+package baekjoon;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+import java.util.Stack;
+
+public class BJ_11724_연결요소의개수 {
+
+	static boolean[] visited;
+	static List<Integer>[] graph ;
+	
+	private static int dfs(int start) {
+		Stack<Integer> stack = new Stack<>();		
+		stack.push(start);
+		
+		while(!stack.isEmpty()) {
+			int top = stack.pop();
+			
+			if(visited[top]) continue;
+			
+			visited[top]=true;
+			
+			List childs = graph[top];
+			for (int i = 0; i < childs.size(); i++) {
+				Integer child = (Integer) childs.get(i);
+				
+				if(!visited[child]) stack.push(child);
+			}
+		}
+		return 1;
+	}
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		int vertex = sc.nextInt();
+		int edges = sc.nextInt();
+		
+		visited = new boolean[vertex+1];
+		
+		graph= new List[vertex+1];
+		
+		for (int i = 1; i <=vertex; i++) {
+			graph[i]= new ArrayList<>();
+		}
+		
+		for (int i = 0; i <edges; i++) {
+			int v1 =sc.nextInt();
+			int v2 =sc.nextInt();
+			
+			graph[v1].add(v2);
+			graph[v2].add(v1);
+		}
+		
+		int sum=0;
+		for (int i = 1; i <= vertex; i++) {
+			if(!visited[i]) {
+				sum+=dfs(i);
+			}
+		}
+		
+		System.out.println(sum);
+	}
+
+}

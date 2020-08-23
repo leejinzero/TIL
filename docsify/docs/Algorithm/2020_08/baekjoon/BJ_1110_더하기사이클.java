@@ -1,0 +1,24 @@
+package baekjoon;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class BJ_1110_더하기사이클 {
+	
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+		int N = Integer.parseInt(bf.readLine());
+		boolean flag=false;
+		int copy = N;
+		int total=0;
+		
+		while(!flag) {
+			copy = copy%10*10+(copy/10+copy%10)%10;
+			total++;
+			if(copy==N) flag= true;
+		}
+		System.out.println(total);	
+	}
+
+}

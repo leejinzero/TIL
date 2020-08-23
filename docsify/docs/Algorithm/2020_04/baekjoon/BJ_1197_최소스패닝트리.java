@@ -1,0 +1,90 @@
+package baekjoon;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.PriorityQueue;
+import java.util.StringTokenizer;
+
+//kruskal
+public class BJ_1197_최소스패닝트리 {
+
+	static class Pair implements Comparable<Pair>{
+		int v1,v2,w;
+
+		public Pair(int v1, int v2, int w) {
+			this.v1 = v1;
+			this.v2 = v2;
+			this.w = w;
+		}
+
+		@Override
+		public int compareTo(Pair o) {
+			return Integer.compare(this.w, o.w);
+		}
+	}
+	
+	public static void main(String[] args) throws IOException {
+		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer tks = new StringTokenizer(bf.readLine());
+		
+		int V = Integer.parseInt(tks.nextToken());
+		int E = Integer.parseInt(tks.nextToken());
+		
+		PriorityQueue<Pair> pq = new PriorityQueue<>();
+		for (int i = 0; i < E; i++) {
+			tks = new StringTokenizer(bf.readLine());
+			int v1 = Integer.parseInt(tks.nextToken());
+			int v2 = Integer.parseInt(tks.nextToken());
+			int w = Integer.parseInt(tks.nextToken());
+			
+			pq.offer(new Pair(v1,v2,w));
+		}
+		
+		parent = new int[V+1];
+		
+		for (int i = 1; i <=V; i++) {
+			parent[i] = i;
+		}
+		
+		int cnt = 0;
+		int result = 0;
+		
+		while(cnt<V-1) {
+			Pair f = pq.poll();
+			
+			if(pos(f.v1,f.v2)) {
+				union(f.v1,f.v2);
+				result += f.w;
+				cnt++;
+			}
+		}
+		
+		System.out.println(result);
+		
+	}
+	
+	private static void union(int v1, int v2) {
+		int p1 = find(v1);
+		int p2 = find(v2);
+		
+		if(p1>p2) parent[p1] = p2;
+		else parent[p2]=p1;
+		
+	}
+
+	static int[] parent;
+
+	private static boolean pos(int v1, int v2) {
+		int p1 = find(v1);
+		int p2 = find(v2);
+		
+		if(p1==p2) return false;
+		return true;
+	}
+
+	private static int find(int v1) {
+		if(parent[v1]==v1) return v1;
+		
+		return parent[v1] = find(parent[v1]);
+	}
+}

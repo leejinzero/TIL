@@ -1,0 +1,113 @@
+package baekjoon;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.PriorityQueue;
+import java.util.Queue;
+import java.util.StringTokenizer;
+
+public class BJ_16235_나무재테크 {
+	static int[][] map;
+	static int[][] provide; 
+	static class Point implements Comparable<Point>{
+		int r,c,age;
+
+		public Point(int r, int c, int age) {
+			this.r = r;
+			this.c = c;
+			this.age = age;
+		}
+
+		@Override
+		public int compareTo(Point o) {
+			Integer a1 = this.age;
+			Integer a2 = o.age;
+			return a1.compareTo(a2);
+		}		
+	}
+	static int[][] dir = {{1,0},{-1,0},{1,1},{1,-1},{0,1},{0,-1},{-1,1},{-1,-1}};
+	static PriorityQueue<Point> tree= new PriorityQueue<>();
+	
+	private static void bfs() {
+		Queue<Point> die = new LinkedList<>();
+		Queue<Point> fall= new LinkedList<>();
+		
+		while(!tree.isEmpty()) {
+			Point f = tree.poll();
+			
+			if(provide[f.r][f.c]-f.age<0) {
+				die.add(f);
+			}else {
+				provide[f.r][f.c] -= f.age;
+				fall.add(new Point(f.r,f.c,f.age+1));
+			}		
+		}
+		
+		while(!die.isEmpty()) {
+			Point f2 = die.poll();
+			provide[f2.r][f2.c]+=f2.age/2;
+		}
+		
+		while(!fall.isEmpty()) {
+			Point f3 = fall.poll();
+			
+			if(f3.age%5==0) {
+				for (int i = 0; i < dir.length; i++) {
+					int nr = f3.r +dir[i][0];
+					int nc = f3.c + dir[i][1];
+					
+					if(nr>=1 && nr<map.length && nc>=1 && nc<map[0].length) {
+						tree.add(new Point(nr,nc,1));
+					}
+				}	
+			}		
+			tree.add(f3);
+		}
+		
+		for (int i = 1; i < map.length; i++) {
+			for (int j = 1; j < map.length; j++) {
+				provide[i][j]+=map[i][j];
+			}
+		}
+	}
+	
+	public static void main(String[] args) throws IOException {
+		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer tks = new StringTokenizer(bf.readLine());
+		
+		int N = Integer.parseInt(tks.nextToken());
+		int treeNum = Integer.parseInt(tks.nextToken());
+		int year = Integer.parseInt(tks.nextToken());
+		
+		map = new int[N+1][N+1];
+		provide = new int[N+1][N+1];
+		
+		for (int i = 1; i <= N; i++) {
+			Arrays.fill(provide[i], 5);
+		}
+		
+		for (int r = 1; r <= N; r++) {
+			tks = new StringTokenizer(bf.readLine());
+			for (int c = 1; c <= N; c++) {
+				map[r][c] = Integer.parseInt(tks.nextToken());
+			}
+		}
+
+		for (int i = 0; i < treeNum; i++) {
+			tks = new StringTokenizer(bf.readLine());
+			int row = Integer.parseInt(tks.nextToken());
+			int col = Integer.parseInt(tks.nextToken());
+			int age = Integer.parseInt(tks.nextToken());
+			
+			tree.add(new Point(row,col,age));
+		}
+			
+		for (int i = 0; i < year; i++) {
+			bfs();
+		}
+    
+		System.out.println(tree.size());
+	}
+}

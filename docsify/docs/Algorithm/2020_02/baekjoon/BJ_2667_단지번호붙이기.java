@@ -1,0 +1,84 @@
+package baekjoon;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+import java.util.Stack;
+
+public class BJ_2667_단지번호붙이기 {
+	static class Point {
+		int row;
+		int col;
+
+		public Point(int row, int col) {
+			this.row = row;
+			this.col = col;
+		}
+
+	}
+
+	static Scanner sc = new Scanner(System.in);
+	static int mapsize = sc.nextInt();
+	static boolean[][] visited = new boolean[mapsize][mapsize];
+
+	private static int dfs(Point p, int[][] map) {
+		Stack<Point> stack = new Stack<>();
+		int[][] dir = { { 1, 0 }, { 0, 1 }, { -1, 0 }, { 0, -1 } };
+
+		stack.push(p);
+		int count = 0;
+
+		while (!stack.isEmpty()) {
+			Point top = stack.pop();
+			if (visited[top.row][top.col])
+				continue;
+
+			count++;
+			visited[top.row][top.col] = true;
+
+			for (int i = 0; i < dir.length; i++) {
+				int nx = top.row + dir[i][0];
+				int ny = top.col + dir[i][1];
+
+				if (nx >= 0 && nx < map.length && ny >= 0 && ny < map.length && visited[nx][ny] == false
+						&& map[nx][ny] == 1) {
+					stack.push(new Point(nx, ny));
+				}
+			}
+		}
+
+		return count;
+
+	}
+
+	public static void main(String[] args) {
+
+		int[][] map = new int[mapsize][mapsize];
+
+		for (int i = 0; i < map.length; i++) {
+			String str = sc.next();
+			String[] splited = str.split("");
+			for (int j = 0; j < map.length; j++) {
+				map[i][j] = Integer.parseInt(splited[j]);
+			}
+		}
+
+		List<Integer> list = new ArrayList<>();
+		for (int i = 0; i < map.length; i++) {
+			for (int j = 0; j < map.length; j++) {
+				if (map[i][j] == 1 && visited[i][j] == false) {
+					int count = dfs(new Point(i, j), map);
+					list.add(count);
+				}
+			}
+		}
+
+		System.out.println(list.size());
+		list.sort(null);
+		for (int i = 0; i < list.size(); i++) {
+			System.out.println(list.get(i));
+		}
+
+	}
+
+}

@@ -1,0 +1,25 @@
+package baekjoon;
+
+import java.util.Scanner;
+
+public class BJ_3474_교수가된현우 {
+	
+	public static int factorial(int n) {
+		int five=0,temp=0;
+		for(int i=5;i<=n;i*=5){
+			five+=n/i;
+			}
+		return five;
+	}
+
+	public static void main(String[] args) {
+		Scanner scanner= new Scanner(System.in);
+		//scanner = new Scanner(str);
+		int jul=scanner.nextInt();
+		for(int i=0; i<jul;i++) {
+			int num = scanner.nextInt();
+			System.out.println(factorial(num));
+		}
+	}
+	
+}

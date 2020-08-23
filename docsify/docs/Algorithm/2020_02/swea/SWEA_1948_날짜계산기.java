@@ -1,0 +1,35 @@
+package swea;
+
+import java.util.Scanner;
+
+public class SWEA_1948_날짜계산기 {
+
+	public static void main(String[] args) {
+		int[] arr = {0,31,28,31,30,31,30,31,31,30,31,30,31};
+		Scanner sc = new Scanner(System.in);
+		int N = sc.nextInt();
+		
+		
+		for (int i = 1; i <=N; i++) {
+			int m1 = sc.nextInt();
+			int d1 =sc.nextInt();
+			int m2 = sc.nextInt();
+			int d2 =sc.nextInt();
+			int diff=0;
+			
+			if(m1==m2) diff=d2-d1+1;
+			else {
+				diff+=arr[m1]-d1+1;
+				diff+=d2;
+				for (int j = m1+1; j < m2; j++) {
+					diff+=arr[j];
+				}
+			}
+			
+			System.out.println("#" +i+" "+diff);
+		}
+		
+
+	}
+
+}

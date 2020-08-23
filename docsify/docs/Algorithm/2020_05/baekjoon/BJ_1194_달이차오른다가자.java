@@ -1,0 +1,122 @@
+package baekjoon;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.StringTokenizer;
+
+/**
+ * @Author leejinyoung
+ * @Date 2020. 5. 14.
+ * @Language java
+ * @Memory 	15536KB
+ * @RunningSpeed 104ms
+ * @Description bfs 3차원 문제, 비트마스킹!(key)
+ * 
+ */
+public class BJ_1194_달이차오른다가자 {
+
+	private static int N;
+	private static int M;
+	private static char[][] map;
+	static int[][] dir = {{1,0},{-1,0},{0,1},{0,-1}};
+	private static boolean[][][] visited;
+	
+	static class Point{
+		int r,c,key,cnt;
+
+		public Point(int r, int c,int key,int cnt) {
+			this.r = r;
+			this.c = c;
+			this.key=key;
+			this.cnt = cnt;
+		}
+
+		@Override
+		public String toString() {
+			return "Point [r=" + r + ", c=" + c + ", key=" + key + ", cnt=" + cnt + "]";
+		}
+	
+	}
+	
+	static Queue<Point> q ;
+
+	public static void main(String[] args) throws IOException {
+		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+		//BufferedReader bf = new BufferedReader(new StringReader(str));
+		StringTokenizer tks = new StringTokenizer(bf.readLine());
+		N = Integer.parseInt(tks.nextToken());
+		M = Integer.parseInt(tks.nextToken());
+		map = new char[N][M];
+	
+		visited = new boolean[N][M][1<<6];
+		
+		q= new LinkedList<>();
+		for (int r = 0; r < N; r++) {
+			String input = bf.readLine();
+			for (int c = 0; c < M; c++) {
+				map[r][c] = input.charAt(c);
+				if(map[r][c] == '0') {
+					q.offer(new Point(r,c,0,0));
+					visited[r][c][0] =true;
+				}
+			}
+		}
+		
+		bfs();
+
+	}
+
+	private static void bfs() {		
+		
+		while(!q.isEmpty()) {
+			Point f = q.poll();
+			
+			for (int i = 0; i < 4; i++) {
+				int nr = f.r+dir[i][0];
+				int nc = f.c+dir[i][1];
+				int key = f.key;
+				
+				if(isIn(nr,nc) && map[nr][nc]!='#') {					
+					if(map[nr][nc]=='1') {
+						System.out.println(f.cnt+1);
+						return;
+					}
+					char ch = map[nr][nc];
+					
+					if(ch>='a' && ch<='f') {
+						key=key|=1<<(ch-'a');
+					}
+					else if(ch>='A' && ch<='F'){
+						if((key& (1<<(ch-'A')))==0) {
+							continue;
+						}
+					}
+					if(!visited[nr][nc][key]) {
+						q.offer(new Point(nr,nc,key,f.cnt+1));
+						visited[nr][nc][key] = true;
+					}
+				}	
+			}		
+		}
+		
+		System.out.println(-1);
+		
+		
+	}
+
+	private static boolean isIn(int nr, int nc) {
+		return nr>=0 && nr<N && nc>=0 && nc<M;
+	}
+
+	
+	private static String str = "7 8\r\n" + 
+			"a#c#eF.1\r\n" + 
+			".#.#.#..\r\n" + 
+			".#B#D###\r\n" + 
+			"0....F.1\r\n" + 
+			"C#E#A###\r\n" + 
+			".#.#.#..\r\n" + 
+			"d#f#bF.1";
+}
