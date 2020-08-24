@@ -13,11 +13,16 @@
     <link rel="icon" href="/TIL/emoji.png" />
   </head>
   <body>
-    <div id="app"></div>
+    <nav>
+      <a href="#/"></a>
+    </nav>
+    <div id="app">🔍Please wait...🔍</div>
 
     <script>
       window.$docsify = {
+        el: "#app",
         name: "Today I Learned 👩🏻‍💻",
+        loadNavbar: true,
         loadSidebar: true,
         themeColor: "#726a95",
         routerMode: "history",
@@ -25,8 +30,23 @@
         alias: {
           "/TIL/.*/_sidebar.md": "/TIL/_sidebar.md",
         },
+
+        search: "auto", // default
+
+        // complete configuration parameters
+        search: {
+          maxAge: 86400000, // Expiration time, the default one day
+          paths: "auto",
+          placeholder: "Type to search",
+          noData: "No Results!",
+          // Headline depth, 1 - 6
+          depth: 6,
+          hideOtherSidebarContent: false, // whether or not to hide other sidebar content
+        },
       };
     </script>
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+    <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
   </body>
 </html>
