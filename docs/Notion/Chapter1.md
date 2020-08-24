@@ -31,25 +31,30 @@
 
 ---
 
-### 가. Supervised Learning (지도학습)
+### 가. Supervised Learning
 
+- 지도 학습
 - Classification
 - 선형 / 비선형모델
 - 선형 모델은 라벨(정답)이 있기 때문에 데이터를 구하기 어려움
 
-### 나. Unsupervised Learning (비지도학습)
+### 나. Unsupervised Learning
 
+- 비지도 학습
 - 사람 학습방법과 비슷
 - K-means clustering
 - DB Scan
 
-### 다. Representation Learning (딥러닝)
+### 다. Representation Learning
 
+- 딥러닝
 - Neural Network
 - Face Recognition (색상->라인->선과 곡선의 조합(눈/코/입)->얼굴형)
 - 연구는 지속되고 있었지만 모델이 복잡하고 계산 많아 데이터가 많아야해서 연구가 발전이 없었지만, 최근 연구가 활발하게 진행되고 있음
 
-### 라. Reinforcement Learning (강화학습)
+### 라. Reinforcement Learning
+
+- 강화 학습
 
 <br>
 

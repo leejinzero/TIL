@@ -1,14 +1,10 @@
 .sidebar-nav {
-  margin-left: 10%;
+  margin-left: 6%;
 }
 
 .search input {
   margin-left: 35px;
   margin-right: 10px;
-}
-
-.sidebar ul {
-  margin: 0;
 }
 
 .sidebar-toggle {
@@ -24,4 +20,8 @@ body.sticky .sidebar-toggle {
 .matching-post {
   display: flex;
   justify-content: center;
+}
+
+h4 {
+  margin: 0;
 }
