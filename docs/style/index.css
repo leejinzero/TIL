@@ -1,0 +1,27 @@
+.sidebar-nav {
+  margin-left: 10%;
+}
+
+.search input {
+  margin-left: 35px;
+  margin-right: 10px;
+}
+
+.sidebar ul {
+  margin: 0;
+}
+
+.sidebar-toggle {
+  width: 40px;
+}
+
+body.sticky .sidebar-toggle {
+  position: sticky;
+  top: 27px;
+  left: 6px;
+}
+
+.matching-post {
+  display: flex;
+  justify-content: center;
+}

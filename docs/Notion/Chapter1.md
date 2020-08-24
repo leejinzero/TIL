@@ -1,49 +1,49 @@
-# 📚 Chapter 1. Machine Learning과 AI
+# 📚 **Chapter 1. Machine Learning과 AI**
 
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; **_20.08.24(Mon)_**
+<div style='text-align:right;'>20.08.24(Mon)</div>
 
-## 1️. **Machine Learning** 이란?
+## **1️. Machine Learning 이란?**
 
 ---
 
-<div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*머신러닝의 특징을 적어 놓은 것입니다.</div>
+<div style='text-align:right;'>머신러닝의 특징을 적어 놓은 것입니다.</div>
 
-#### Machine Learning 🆚 BigData
+### Machine Learning vs BigData
 
 - 빅데이터를 해석, 이해, 분석하는 방법론 중 하나
 
-#### Machine Learning 🆚 Data Mining
+### Machine Learning vs Data Mining
 
 - 정형, 비정형 데이터 상관없지만 비정형을 주로 다루는 학습 방법
 
-#### Machine Learning 🆚 AI
+### Machine Learning vs AI
 
 - AI의 일부분, 데이터를 통계적으로 분석하여 모델을 만드는 방법
 
-#### Machine Learning 🆚 Statistics
+### Machine Learning vs Statistics
 
 - 통계학 모델을 가져다 실생활 데이터에 적용하는 방법
 - 훨씬 양, 노이즈가 많아 통계학적 한계를 뛰어넘음
 
 <br>
 
-## 2️. **Machine Learning**이 다루는 문제들
+## **2️. Machine Learning이 다루는 문제들**
 
 ---
 
-### 가. **Supervised Learning** (지도학습)
+### 가. Supervised Learning (지도학습)
 
 - Classification
 - 선형 / 비선형모델
 - 선형 모델은 라벨(정답)이 있기 때문에 데이터를 구하기 어려움
 
-### 나. **Unsupervised Learning** (비지도학습)
+### 나. Unsupervised Learning (비지도학습)
 
 - 사람 학습방법과 비슷
 - K-means clustering
 - DB Scan
 
-### 다. **Representation Learning** (딥러닝)
+### 다. Representation Learning (딥러닝)
 
 - Neural Network
 - Face Recognition (색상->라인->선과 곡선의 조합(눈/코/입)->얼굴형)
@@ -53,7 +53,7 @@
 
 <br>
 
-## 3️. **AI**의 역사
+## **3️. AI의 역사**
 
 ---
 
@@ -68,16 +68,16 @@
 
 <br>
 
-## 4️. **AI Intelligence**
+## **4️. AI Intelligence**
 
 ---
 
-### **Visual Intelligence**
+### Visual Intelligence
 
 - MINST : 숫자 필기 인식
 - imageNet : hierarchical image database
 
-### **Language Intelligence**
+### Language Intelligence
 
 - SUAD Dataset(QnA)
 - Europarl Corpus : Machine Translation
