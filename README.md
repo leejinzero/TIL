@@ -1,2 +1,3 @@
-# Algorithm
-Since 2020.01 ~
+# LEEJINZERO'S TIL
+
+> ### Today I Learned.

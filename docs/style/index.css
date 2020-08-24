@@ -17,11 +17,6 @@ body.sticky .sidebar-toggle {
   left: 2px;
 }
 
-.matching-post {
-  display: flex;
-  justify-content: center;
-}
-
 h3 {
   margin: 0;
 }
