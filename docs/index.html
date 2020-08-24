@@ -37,7 +37,6 @@
         search: {
           maxAge: 86400000, // Expiration time, the default one day
           paths: "auto",
-          placeholder: "Type to search",
           noData: "No Results!",
           // Headline depth, 1 - 6
           depth: 6,
@@ -50,3 +49,26 @@
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
   </body>
 </html>
+
+<style>
+  .search input:focus {
+    box-shadow: none;
+  }
+
+  .sidebar-nav {
+    margin-left: 5%;
+  }
+
+  .search input {
+    margin-left: 40px;
+  }
+
+  .sidebar-toggle {
+    width: 40px;
+  }
+
+  body.sticky .sidebar-toggle {
+    position: sticky;
+    top: 10px;
+  }
+</style>
