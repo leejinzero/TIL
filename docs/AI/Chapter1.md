@@ -1,10 +1,10 @@
 # 📚 Chapter 1. Machine Learning과 AI
 
----
-
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; **_20.08.24(Mon)_**
 
-## 1️⃣. **Machine Learning** 이란?
+## 1️. **Machine Learning** 이란?
+
+---
 
 <div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*머신러닝의 특징을 적어 놓은 것입니다.</div>
 
@@ -27,7 +27,9 @@
 
 <br>
 
-## 2️⃣. **Machine Learning**이 다루는 문제들
+## 2️. **Machine Learning**이 다루는 문제들
+
+---
 
 ### 가. **Supervised Learning** (지도학습)
 
@@ -51,7 +53,9 @@
 
 <br>
 
-## 3️⃣. **AI**의 역사
+## 3️. **AI**의 역사
+
+---
 
 | **Year** | **Model**                 |
 | -------- | ------------------------- |
@@ -64,7 +68,9 @@
 
 <br>
 
-## 4️⃣. **AI Intelligence**
+## 4️. **AI Intelligence**
+
+---
 
 ### **Visual Intelligence**
 

@@ -23,27 +23,24 @@
 
     <script>
       window.$docsify = {
-        el: "#app",
         name: "Today I Learned 👩🏻‍💻",
+        repo: "https://github.com/leejinzero/TIL",
+        routerMode: "hash",
         loadNavbar: true,
         loadSidebar: true,
-
-        routerMode: "hash",
-        repo: "https://github.com/leejinzero/TIL",
+        subMaxLevel: 2,
         alias: {
-          "/TIL/.*/_sidebar.md": "/TIL/_sidebar.md",
+          "/.*/_navbar.md": "/_navbar.md",
         },
-
         search: "auto", // default
-
         // complete configuration parameters
         search: {
           maxAge: 86400000, // Expiration time, the default one day
-          paths: "auto",
+          placeholder: "Type to search",
           noData: "No Results!",
+          paths: ["/", "/Algorithm/", "/AI/"],
           // Headline depth, 1 - 6
           depth: 6,
-          hideOtherSidebarContent: false, // whether or not to hide other sidebar content
         },
       };
     </script>
