@@ -60,7 +60,8 @@
           function (hook, vm) {
             // load livere
             hook.afterEach(function (content) {
-              //console.log(content);
+              console.log(content);
+
               var comment =
                 "\n<div id='lv-container' data-id='city' data-uid='MTAyMC81MTM5Ni8yNzg3Nw=='></div>";
               return content + comment;
@@ -70,7 +71,7 @@
               (function (d, s) {
                 var j,
                   e = d.getElementsByTagName(s)[0];
-                console.log(e);
+
                 if (typeof LivereTower === "function") {
                   return;
                 }
