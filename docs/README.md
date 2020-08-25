@@ -1,4 +1,4 @@
-# LEEJINZERO'S TIL
+# **LEEJINZERO'S TIL**
 
 > ### Today I Learned!
 >
