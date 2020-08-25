@@ -1,3 +1,5 @@
 # LEEJINZERO'S TIL
 
-> ### Today I Learned.
+> ### Today I Learned!
+>
+> 😈 🥰 🥱 🙊 💻
