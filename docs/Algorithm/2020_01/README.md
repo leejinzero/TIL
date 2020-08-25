@@ -1,9 +1,7 @@
 > # **2020.01**
 
-- ## BaekJoon
+- ## BOJ
 
-```
-dsggsgs
-```
+      console.log("Hello World!");
 
 - ## SWEA
