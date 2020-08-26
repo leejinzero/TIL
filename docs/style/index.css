@@ -174,3 +174,35 @@ pre:hover .docsify-copy-code-button {
 .alert.flat.danger .title {
   color: #551713;
 }
+
+.gt-container .gt-link {
+  border-bottom: 1px dotted #776d8a !important;
+}
+
+.gt-container a {
+  color: #776d8a !important;
+}
+
+.gt-container .gt-btn {
+  background-color: #776d8a !important;
+  border-color: #776d8a !important;
+}
+
+.gt-container .gt-btn-preview {
+  color: #776d8a !important;
+  background-color: white !important;
+}
+
+.gt-container .gt-svg svg {
+  fill: #776d8a !important;
+}
+
+.gt-container .gt-ico-github svg {
+  fill: black !important;
+}
+.gt-container .gt-comment-admin .gt-comment-content {
+  background-color: #faf2f2 !important;
+}
+.gt-container .gt-comment-content {
+  background-color: #f6f6f6 !important;
+}
