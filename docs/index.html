@@ -79,6 +79,19 @@
             hook.doneEach(function () {
               var el = document.getElementById("gitalk-container");
               while (el.hasChildNodes()) el.removeChild(el.firstChild);
+
+              const path = /^.*?#(\/.*?)(?:\?.*|)$/g.exec(location.href)[1];
+              const gitalk = new Gitalk({
+                clientID: "8acd457eb3fb6ef1020d",
+                clientSecret: "c66d6613eed62bb40288959f0518982d06554a11",
+                repo: "TIL",
+                owner: "leejinzero",
+                admin: ["leejinzero"],
+                id: path,
+                title: path,
+                distractionFreeMode: false,
+              });
+
               gitalk.render("gitalk-container");
             });
           },
@@ -93,20 +106,6 @@
     </script>
 
     <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-    <script>
-      const path = /^.*?#(\/.*?)(?:\?.*|)$/g.exec(location.href)[1];
-      const gitalk = new Gitalk({
-        clientID: "8acd457eb3fb6ef1020d",
-        clientSecret: "c66d6613eed62bb40288959f0518982d06554a11",
-        repo: "TIL",
-        owner: "leejinzero",
-        admin: ["leejinzero"],
-        id: path,
-        title: path,
-        distractionFreeMode: false,
-      });
-    </script>
-
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
     <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
     <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
