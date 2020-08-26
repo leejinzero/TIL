@@ -17,7 +17,6 @@
     <link rel="icon" href="/TIL/emoji.png" />
     <link rel="stylesheet" href="./style/index.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" />
-    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
   </head>
   <body>
     <div id="app">
@@ -92,17 +91,15 @@
         },
       };
     </script>
-
-    <script src="//unpkg.com/docsify/lib/plugins/gitalk.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
     <script>
       const gitalk = new Gitalk({
         clientID: "22f4c12535152be1ee34",
-        clientSecret: "bc75d86654e1707444960ac0d0c6d22e03eff42f",
+        clientSecret: "6bd9b7591ebf715074c54363226115a2e9cba1fc",
         repo: "TIL",
         owner: "leejinzero",
         admin: ["leejinzero"],
-        title: location.href,
+        distractionFreeMode: false,
       });
     </script>
 
