@@ -1,3 +1,13 @@
-# LEEJINZERO'S TIL
+# **LEEJINZERO'S TIL**
 
-> ### Today I Learned.
+> ### **Today I Learned!**
+>
+> you cannot find peace by avoiding life.
+>
+> 😈 🥰 🥱 🙊 💻
+>
+> <div style="text-align:right">Since 2020.01</div>
+
+<br>
+
+<img src="https://hackernoon.com/images/f2px36fy.gif">
