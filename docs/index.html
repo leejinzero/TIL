@@ -17,7 +17,9 @@
     <link rel="stylesheet" href="./style/index.css" />
   </head>
   <body>
-    <div id="app">🔍Please wait...🔍</div>
+    <div id="app">
+      <h1 style="text-align: center;">🔍<b>Please wait...🔍</b></h1>
+    </div>
 
     <script>
       window.$docsify = {
@@ -58,30 +60,6 @@
 
         plugins: [
           function (hook, vm) {
-            // load livere
-            hook.afterEach(function (content) {
-              //console.log(content);
-
-              var comment =
-                "\n<div id='lv-container' data-id='city' data-uid='MTAyMC81MTM5Ni8yNzg3Nw=='></div>";
-              return content + comment;
-            });
-
-            hook.doneEach(function () {
-              (function (d, s) {
-                var j,
-                  e = d.getElementsByTagName(s)[0];
-
-                if (typeof LivereTower === "function") {
-                  return;
-                }
-                j = d.createElement(s);
-                j.src = "https://cdn-city.livere.com/js/embed.dist.js";
-                j.async = true;
-                e.parentNode.insertBefore(j, e);
-              })(document, "script");
-            });
-
             hook.doneEach(function () {
               twemoji.parse(document);
             });
