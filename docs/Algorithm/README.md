@@ -1,3 +1,3 @@
-# LEEJINZERO'S TIL
+> # **2020.08**
 
-> Today I Learned.
+- ## BOJ
