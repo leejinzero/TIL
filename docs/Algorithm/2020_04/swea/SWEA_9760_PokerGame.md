@@ -1,3 +1,4 @@
+```java
 package swea;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -83,7 +84,7 @@ public class SWEA_9760_PokerGame {
 			int pair = 0;
 			int thriple = 0;
 			int four = 0;
-			
+
 			for (int i = 1; i < 14; i++) {
 				if(num[i]==1) {
 					max++;
@@ -91,7 +92,7 @@ public class SWEA_9760_PokerGame {
 					max=0;
 				}
 			}
-			
+
 			for (int i = 1; i < 14; i++) {
 				if (num[i] == 2) {
 					pair++;
@@ -144,9 +145,10 @@ public class SWEA_9760_PokerGame {
 				sb.append("One pair").append("\n");
 				continue;
 			}
-      
+
 			sb.append("High card").append("\n");
 		}
 		System.out.println(sb);
 	}
 }
+```

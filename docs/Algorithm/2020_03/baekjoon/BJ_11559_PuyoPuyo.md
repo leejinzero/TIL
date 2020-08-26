@@ -1,3 +1,4 @@
+```java
 package baekjoon;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -75,7 +76,7 @@ public class BJ_11559_PuyoPuyo {
 					}
 				}
 			}
-      
+
       			//바뀌는 열 리스트
 			List<Integer> col = new ArrayList<>();
 			//터진거 점으로 바꾸기
@@ -90,9 +91,9 @@ public class BJ_11559_PuyoPuyo {
 						if (!col.contains(tem.col)) {
 							col.add(tem.col);
 						}
-					}					
+					}
 				}
-				
+
 				// 내려주기
 				for (int c = 0; c < col.size(); c++) {
 					int c1 = col.get(c);
@@ -105,7 +106,7 @@ public class BJ_11559_PuyoPuyo {
 								break;
 							}
 						}
-            
+
 						for (int l = r - 1; l >= 0; l--) {
 							if (map[l][c1] != '.') {
 								for (int j2 = l; j2 >= 0; j2--) {
@@ -115,7 +116,7 @@ public class BJ_11559_PuyoPuyo {
 								break;
 							}
 						}
-            
+
             					//중간에 점 끼여있는지 검사 (다 내려갔는지?)
 						boolean flag = false;
 						for (int k = 0; k < 12; k++) {
@@ -127,7 +128,7 @@ public class BJ_11559_PuyoPuyo {
 								}
 							}
 						}
-            
+
             					//다 내려갔다면 통과
 						if (!flag) break;
 					}
@@ -138,3 +139,4 @@ public class BJ_11559_PuyoPuyo {
 		System.out.println(popCnt);
 	}
 }
+```
