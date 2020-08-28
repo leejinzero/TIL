@@ -15,10 +15,13 @@ h3 {
   }
 }
 
+.markdown-section {
+  max-width: 90%;
+}
 .gitalk-container,
 #gitalk-container {
   width: 90% !important;
-  max-width: 790px !important;
+  padding: 2rem 45px;
 }
 
 .docsify-copy-code-button,
