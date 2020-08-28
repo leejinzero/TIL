@@ -18,7 +18,7 @@
 
   [1600](/Algorithm/2020_03/baekjoon/BJ_1600_말이되고픈원숭이.md) - 말이되고픈 원숭이
 
-  [16235](/Algorithm/2020_03/baekjoon/BJ_16235_나무재태크.md) - 나무재테크
+  [16235](/Algorithm/2020_03/baekjoon/BJ_16235_나무재테크.md) - 나무재테크
 
   [16236](/Algorithm/2020_03/baekjoon/BJ_16236_아기상어.md) - 아기상어
 
@@ -28,7 +28,7 @@
 
   [17472](/Algorithm/2020_03/baekjoon/BJ_17472_다리만들기2.md) - 다리만들기2
 
-  [17839](/Algorithm/2020_03/baekjoon/BJ_17836_BabaisRabbit.md) - Baba is Rabbit
+  [17839](/Algorithm/2020_03/baekjoon/BJ_17839_BabaisRabbit.md) - Baba is Rabbit
 
   [18405](/Algorithm/2020_03/baekjoon/BJ_18405_경쟁적전염.md) - 경쟁적 전염
 

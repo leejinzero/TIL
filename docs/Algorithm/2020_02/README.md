@@ -72,7 +72,7 @@
 
   [2251](/Algorithm/2020_02/baekjoon/BJ_2251_물통.md) - 물통
 
-  [2486](/Algorithm/2020_02/baekjoon/BJ_2486_안전영역.md) - 안전영역
+  [2468](/Algorithm/2020_02/baekjoon/BJ_2468_안전영역.md) - 안전영역
 
   [2477](/Algorithm/2020_02/baekjoon/BJ_2477_참외밭.md) - 참외밭
 
@@ -102,7 +102,7 @@
 
   [3190](/Algorithm/2020_02/baekjoon/BJ_3190_뱀.md) - 뱀
 
-  [5014](/Algorithm/2020_02/baekjoon/BJ_5104_스타트링크.md) - 스타트링크
+  [14889](/Algorithm/2020_02/baekjoon/BJ_14889_스타트와링크.md) - 스타트와링크
 
   [7562](/Algorithm/2020_02/baekjoon/BJ_7562_나이트의이동.md) - 나이트의 이동
 
