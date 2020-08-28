@@ -2,7 +2,7 @@
 
 - ## BOJ
 
-  [10026](/Algorithm/2020_08/baekjoon/BJ_11026_적록색약.md) - 적록색약
+  [10026](/Algorithm/2020_08/baekjoon/BJ_10026_적록색약.md) - 적록색약
 
   [1012](/Algorithm/2020_08/baekjoon/BJ_1012_유기농배추.md) - 유기농배추
 
