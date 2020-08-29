@@ -62,7 +62,7 @@
           function (hook, vm) {
             hook.beforeEach(function (html) {
               var url = "https://github.com/leejinzero/TIL/tree/master/docs/" + vm.route.file;
-              var editHtml = "[📝 EDIT DOCUMENT](" + url + ")\n";
+              var editHtml = "[📝 DOCUMENT](" + url + ")\n";
 
               return editHtml + html;
             });

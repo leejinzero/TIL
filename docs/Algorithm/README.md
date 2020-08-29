@@ -1,4 +1,6 @@
-> # <i class="fas fa-file-code fa-fw"></i> **Alogrithm**
+# <i class="fas fa-file-code fa-fw"></i> **Alogrithm**
+
+<br>
 
 > [!Contact|label:Rule]
 >
