@@ -9,7 +9,9 @@ h3 {
   .sidebar-toggle {
     padding: 10px;
   }
-
+  .markdown-section {
+    max-width: 100% !important;
+  }
   main {
     height: 100%;
   }
