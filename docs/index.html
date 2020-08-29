@@ -23,13 +23,14 @@
 
     <script>
       window.$docsify = {
+        el: "#app",
         name: "<b>Today I Learned</b> 👩🏻‍💻",
         repo: "https://github.com/leejinzero/TIL",
         routerMode: "hash",
         loadNavbar: true,
         loadSidebar: true,
         subMaxLevel: 2,
-
+        executeScript: true,
         themeColor: "#776d8a",
         alias: {
           "/.*/_navbar.md": "/_navbar.md",
@@ -55,6 +56,15 @@
           function (hook, vm) {
             hook.doneEach(function () {
               twemoji.parse(document);
+            });
+          },
+
+          function (hook, vm) {
+            hook.beforeEach(function (html) {
+              var url = "https://github.com/leejinzero/TIL/tree/master/docs/" + vm.route.file;
+              var editHtml = "[📝 EDIT DOCUMENT](" + url + ")\n";
+
+              return editHtml + html;
             });
           },
 
