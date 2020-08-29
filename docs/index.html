@@ -17,31 +17,18 @@
     <link rel="icon" href="/TIL/emoji.png" />
     <link rel="stylesheet" href="./style/index.css" />
     <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+    <link rel="stylesheet" href="unpkg.com/@fortawesome/fontawesome-free/css/fontawesome.css" />
+    <link rel="stylesheet" href="unpkg.com/@fortawesome/fontawesome-free/css/brands.css" />
+    <link rel="stylesheet" href="unpkg.com/@fortawesome/fontawesome-free/css/regular.css" />
+    <link rel="stylesheet" href="unpkg.com/@fortawesome/fontawesome-free/css/solid.css" />
   </head>
   <body>
-    <div id="app">
-      <h1 style="text-align: center">🔍<b>Please wait...🔍</b></h1>
-    </div>
-
-    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
-    <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
-
-    <script src="//unpkg.com/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
-    <script src="//cdn.jsdelivr.net/gh/jerryc127/butterfly_cdn@2.1.0/js/click_heart.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-java.min.js"></script>
+    <div id="app">Loading...</div>
 
     <script>
       window.$docsify = {
         name: "<b>Today I Learned</b> 👩🏻‍💻",
-        repo: "true",
-        corner: {
-          url: "https://github.com/leejinzero",
-          icon: "emoji.png",
-          // the size of the image
-          width: 65,
-          height: 65,
-        },
+        repo: "https://github.com/leejinzero/TIL",
         routerMode: "hash",
         loadNavbar: true,
         loadSidebar: true,
@@ -110,12 +97,26 @@
           crossChapter: true,
           crossChapterText: true,
         },
+        "flexible-alerts": {
+          style: "flat",
+
+          contact: {
+            className: "contact",
+            label: "Contact",
+          },
+        },
       };
     </script>
-
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+    <script src="//unpkg.com/docsify-fontawesome/dist/docsify-fontawesome.min.js"></script>
+    <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+    <script src="//unpkg.com/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
+    <script src="//cdn.jsdelivr.net/gh/jerryc127/butterfly_cdn@2.1.0/js/click_heart.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-java.min.js"></script>
     <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/docsify-corner/dist/docsify-corner.js"></script>
     <script src="//cdn.jsdelivr.net/gh/TaQini/docsify-twemoji@master/twemoji.min.js"></script>
     <script src="https://unpkg.com/docsify-copy-code@2"></script>
+    <script src="https://unpkg.com/docsify-plugin-flexible-alerts"></script>
   </body>
 </html>
