@@ -1,4 +1,4 @@
-# **Alogrithm**
+# **Algorithm**
 
 <hr>
 
