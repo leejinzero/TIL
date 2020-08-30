@@ -12,6 +12,8 @@
 
   [1652](/Algorithm/2020_08/baekjoon/BJ_1652_누울자리를찾아라.md) - 누울 자리를 찾아라
 
+  [1747](/Algorithm/2020_08/baekjoon/BJ_1747.md) - 소수&팰린드롬
+
   [1759](/Algorithm/2020_08/baekjoon/BJ_1759_암호만들기.md) - 암호 만들기
 
   [1976](/Algorithm/2020_08/baekjoon/BJ_1976_여행가자.md) - 여행가자

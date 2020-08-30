@@ -81,6 +81,12 @@ pre:hover .docsify-copy-code-button {
   font-size: var(--heading-h3-font-size);
 }
 
+.alert.flat.tip {
+  color: black !important;
+  background-color: #f3e6e3 !important;
+  border-color: #f3e6e3 !important;
+}
+
 .alert.flat.contact {
   color: white !important;
   border-color: #776d8a !important;
