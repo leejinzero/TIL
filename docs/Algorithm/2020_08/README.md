@@ -22,6 +22,8 @@
 
   [2621](/Algorithm/2020_08/baekjoon/BJ_2621_카드게임.md) - 카드게임
 
+  [2665](/Algorithm/2020_08/baekjoon/BJ_2665.md) - 미로 만들기
+
   [2816](/Algorithm/2020_08/baekjoon/BJ_2816_디지털티비.md) - 디지털 티비
 
   [3197](/Algorithm/2020_08/baekjoon/BJ_3197.md) - 백조의 호수
