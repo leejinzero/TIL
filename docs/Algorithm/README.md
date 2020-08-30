@@ -1,9 +1,9 @@
-# <i class="fas fa-file-code fa-fw"></i> **Alogrithm**
+# **Alogrithm**
 
-<br>
+<hr>
 
-> [!Contact|label:Rule]
+> [!TIP]
 >
 > 1. 하루에 하나씩 풀기
 > 2. 간단하게 설명 적기
-> 3. 화이팅
+> 3. 2시간이상 모르면 Solution보고 익히기
