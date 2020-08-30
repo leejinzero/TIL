@@ -1,3 +1,7 @@
-# <i class="fas fa-book-reader fa-fw"></i> **AI**
+# **AI**
 
-<br>
+<hr>
+
+> [!TIP|label:Rule]
+>
+> 1.
