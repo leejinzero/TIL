@@ -128,3 +128,8 @@ hr {
 .gt-container .gt-comment-content {
   background-color: #f6f6f6 !important;
 }
+
+:root {
+  --docsifytabs-border-color: #ededed;
+  --docsifytabs-tab-highlight-color: #776d8a;
+}
