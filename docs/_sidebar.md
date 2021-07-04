@@ -8,7 +8,4 @@
   - [2020_07](/Algorithm/2020_07/)
   - [2020_08](/Algorithm/2020_08/)
   - [2020_09](/Algorithm/2020_09/)
-
-- ### [<i class="fas fa-book-reader fa-fw"></i> **AI**](/AI/)
-
-  - [08/25](/AI/08-25.md)
+  - [2021_07](/Algorithm/2021_07/)
