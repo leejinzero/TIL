@@ -11,4 +11,3 @@
   - [2021_07](/Algorithm/2021_07/)
 
 - ### [<i class="fas fa-file-code fa-fw"></i> **DDD**](/DDD/)
-  - [2021_08](/DDD/2021_08/)
